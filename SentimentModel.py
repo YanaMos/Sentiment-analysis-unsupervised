@@ -3,11 +3,8 @@ from nltk.corpus import sentiwordnet as swn
 
 
 def predict_sentiment(article):
-    print(article)
     article = nltk.word_tokenize(article)
-    if len(article) < 4:
-        return None
-
+    
     tagged_text = nltk.pos_tag(article)
     pos_score = neg_score = token_count = obj_score = 0
     for word, tag in tagged_text:
